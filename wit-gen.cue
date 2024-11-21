@@ -1,5 +1,3 @@
-package wit-gen
-
 witOutput: """
 interface {{ .name }} {
     {{ for _, m in .methods }}

@@ -1,6 +1,27 @@
-package proto_gen
-
 #ProtoTemplate: {
+    // Define an input parameter 'service'
+    service: {
+        name: string
+        methods: [...{
+            name: string
+            input: {
+                name: string
+                fields: [...{
+                    name: string
+                    type: string
+                }]
+            }
+            output: {
+                name: string
+                fields: [...{
+                    name: string
+                    type: string
+                }]
+            }
+        }]
+    }
+
+    // Generate Protobuf output
     output: """
     syntax = "proto3";
     package {{service.name}};
